@@ -1,0 +1,269 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model formerHh_members {
+  interview_key            String  @id @db.NVarChar(50)
+  interview_id             String  @db.NVarChar(50)
+  formerhhMember_roster_id Int     @db.TinyInt
+  C36A_formerMembers       String  @db.NVarChar(50)
+  C36B_relationship        Int     @db.TinyInt
+  C36C_sex                 Int     @db.TinyInt
+  C36D_age                 Int     @db.TinyInt
+  C36E_yearDeparture       Int     @db.SmallInt
+  C36F_residentalCountry   Int     @db.TinyInt
+  C10F_otherCountry        String? @db.NVarChar(50)
+}
+
+model hh_roster {
+  interview__key            String  @id @db.NVarChar(50)
+  interview__id             String  @db.NVarChar(50)
+  hh_roster__id             Int     @db.TinyInt
+  C01_personName            String  @db.NVarChar(50)
+  C02_relationship          Int
+  C03_sex                   Int
+  C04_age                   Int
+  C05_matritalStatus        Int?
+  C06a_religion             Int?
+  C06b_specify              String? @db.NVarChar(50)
+  C06c_specify              String? @db.NVarChar(50)
+  C07_isfatherstillAlive    String? @db.NVarChar(50)
+  C08a_ismotherstillAlive   Int?
+  C08b_hhMember             Int?
+  C08c_personNumber         Int?
+  C09_totalYears            Int?
+  C10_placeofBirth          Int?
+  C10a_birthProv            Int?
+  C10b_birthDist            Int?
+  C10c_birthCountry         String? @db.NVarChar(50)
+  C10d_otherCountry         String? @db.NVarChar(50)
+  C11_usualResidence        Int?
+  C11a_residProv            Int?
+  C11b_residDist            Int?
+  C11c_residentalCountry    String? @db.NVarChar(50)
+  C11d_otherCountry         String? @db.NVarChar(50)
+  C12A_difSeeing            Int?
+  C12B_diffHearing          Int?
+  C12C_diffMobility         Int?
+  C12D_diffMemory           Int?
+  C12E_diffSelfcare         Int?
+  C12F_diffCommunication    Int?
+  C13_attendedSchool        Int?
+  C14_gradeCompleted        Int?
+  C15_isSchooling           Int?
+  C16_grade                 Int?
+  C17a_mainReason           Int?
+  C17b_specify              String? @db.NVarChar(Max)
+  C18A_english              Int?
+  C18B_tokPisin             Int?
+  C18C_motu                 Int?
+  C18D_tokPles              Int?
+  C18E_otherLanguage        Int?
+  C18E_specify              String? @db.NVarChar(Max)
+  C19_paidWork              Int?
+  C20_salingActivity        Int?
+  C21_businessActivity      Int?
+  C22_voluntaryHelp         Int?
+  C23_absentfromPaidjob     Int?
+  C24_mainOccupation        String? @db.NVarChar(Max)
+  C25_mainActivity          String? @db.NVarChar(100)
+  C26_newActivity           Int?
+  C27_mainReason            Int?
+  C27_specify               String? @db.NVarChar(Max)
+  C28_ifOpportunity         Int?
+  C29_maleTotal             Int?
+  C29_femaleTotal           Int?
+  C30_malelivingTogether    Int?
+  C30_femalelivingTogether  Int?
+  C31_malelivingElsewhere   Int?
+  C31_femalelivingElsewhere Int?
+  C32_maleDead              Int?
+  C32_femaleDead            Int?
+  C33_birthDay              Int?
+  C33_birthMonth            Int?
+  C33_birthYear             Int?
+  C34_sex                   Int?
+  C35_childAlive            Int?
+}
+
+model sdesmain {
+  interview_key               String  @id @db.NVarChar(50)
+  interview_id                String  @db.NVarChar(50)
+  a01_province                Int     @db.TinyInt
+  a02_clusterNumber           Int
+  a03_segment                 String  @db.NVarChar(50)
+  a04_dwellingNumber          Int
+  a05_hNumber                 Int
+  a06_hhsampleNumber          Int
+  a07_houseType               Int
+  a08_hheadName               String  @db.NVarChar(50)
+  a09_gps__Latitude           Float
+  a09_gps__Longitude          Float
+  a09_gps__Accuracy           Float
+  a09_gps__Altitude           Float
+  a09_gps__Timestamp          String  @db.NVarChar(50)
+  inter_finalVisit_date       String? @db.NVarChar(50)
+  C01_personName__0           String  @db.NVarChar(50)
+  C01_personName__1           String  @db.NVarChar(50)
+  C01_personName__2           String  @db.NVarChar(50)
+  C01_personName__3           String  @db.NVarChar(50)
+  C01_personName__4           String  @db.NVarChar(50)
+  C01_personName__5           String  @db.NVarChar(50)
+  C01_personName__6           String  @db.NVarChar(50)
+  C01_personName__7           String  @db.NVarChar(50)
+  C01_personName__8           String  @db.NVarChar(50)
+  C01_personName__9           String  @db.NVarChar(50)
+  C01_personName__10          String  @db.NVarChar(50)
+  C01_personName__11          String  @db.NVarChar(50)
+  C01_personName__12          String  @db.NVarChar(50)
+  C01_personName__13          String  @db.NVarChar(50)
+  C01_personName__14          String  @db.NVarChar(50)
+  C01_personName__15          String  @db.NVarChar(50)
+  C01_personName__16          String  @db.NVarChar(50)
+  C01_personName__17          String  @db.NVarChar(50)
+  C01_personName__18          String  @db.NVarChar(50)
+  C01_personName__19          String  @db.NVarChar(50)
+  C01_personName__20          String  @db.NVarChar(50)
+  C01_personName__21          String  @db.NVarChar(50)
+  C01_personName__22          String  @db.NVarChar(50)
+  C01_personName__23          String  @db.NVarChar(50)
+  C01_personName__24          String  @db.NVarChar(50)
+  C01_personName__25          String  @db.NVarChar(50)
+  C01_personName__26          String  @db.NVarChar(50)
+  C01_personName__27          String  @db.NVarChar(50)
+  C01_personName__28          String  @db.NVarChar(50)
+  C01_personName__29          String  @db.NVarChar(50)
+  C01_personName__30          String  @db.NVarChar(50)
+  C01_personName__31          String  @db.NVarChar(50)
+  C01_personName__32          String  @db.NVarChar(50)
+  C01_personName__33          String  @db.NVarChar(50)
+  C01_personName__34          String  @db.NVarChar(50)
+  C01_personName__35          String  @db.NVarChar(50)
+  C01_personName__36          String  @db.NVarChar(50)
+  C01_personName__37          String  @db.NVarChar(50)
+  C01_personName__38          String  @db.NVarChar(50)
+  C01_personName__39          String  @db.NVarChar(50)
+  C01_personName__40          String  @db.NVarChar(50)
+  C01_personName__41          String  @db.NVarChar(50)
+  C01_personName__42          String  @db.NVarChar(50)
+  C01_personName__43          String  @db.NVarChar(50)
+  C01_personName__44          String  @db.NVarChar(50)
+  C01_personName__45          String  @db.NVarChar(50)
+  C01_personName__46          String  @db.NVarChar(50)
+  C01_personName__47          String  @db.NVarChar(50)
+  C01_personName__48          String  @db.NVarChar(50)
+  C01_personName__49          String  @db.NVarChar(50)
+  C01_personName__50          String  @db.NVarChar(50)
+  C01_personName__51          String  @db.NVarChar(50)
+  C01_personName__52          String  @db.NVarChar(50)
+  C01_personName__53          String  @db.NVarChar(50)
+  C01_personName__54          String  @db.NVarChar(50)
+  C01_personName__55          String  @db.NVarChar(50)
+  C01_personName__56          String  @db.NVarChar(50)
+  C01_personName__57          String  @db.NVarChar(50)
+  C01_personName__58          String  @db.NVarChar(50)
+  C01_personName__59          String  @db.NVarChar(50)
+  C36_memLivingabroad         Int?
+  C36A_formerMembers__0       String? @db.NVarChar(50)
+  C36A_formerMembers__1       String? @db.NVarChar(50)
+  C36A_formerMembers__2       String? @db.NVarChar(50)
+  C36A_formerMembers__3       String? @db.NVarChar(50)
+  C36A_formerMembers__4       String? @db.NVarChar(50)
+  C36A_formerMembers__5       String? @db.NVarChar(50)
+  C36A_formerMembers__6       String? @db.NVarChar(50)
+  C36A_formerMembers__7       String? @db.NVarChar(50)
+  C36A_formerMembers__8       String? @db.NVarChar(50)
+  C36A_formerMembers__9       String? @db.NVarChar(50)
+  C36A_formerMembers__10      String? @db.NVarChar(50)
+  C36A_formerMembers__11      String? @db.NVarChar(50)
+  C36A_formerMembers__12      String? @db.NVarChar(50)
+  C36A_formerMembers__13      String? @db.NVarChar(50)
+  C36A_formerMembers__14      String? @db.NVarChar(50)
+  C36A_formerMembers__15      String? @db.NVarChar(50)
+  C36A_formerMembers__16      String? @db.NVarChar(50)
+  C36A_formerMembers__17      String? @db.NVarChar(50)
+  C36A_formerMembers__18      String? @db.NVarChar(50)
+  C36A_formerMembers__19      String? @db.NVarChar(50)
+  C36A_formerMembers__20      String? @db.NVarChar(50)
+  C36A_formerMembers__21      String? @db.NVarChar(50)
+  C36A_formerMembers__22      String? @db.NVarChar(50)
+  C36A_formerMembers__23      String? @db.NVarChar(50)
+  C36A_formerMembers__24      String? @db.NVarChar(50)
+  C36A_formerMembers__25      String? @db.NVarChar(50)
+  C36A_formerMembers__26      String? @db.NVarChar(50)
+  C36A_formerMembers__27      String? @db.NVarChar(50)
+  C36A_formerMembers__28      String? @db.NVarChar(50)
+  C36A_formerMembers__29      String? @db.NVarChar(50)
+  C37_ownrentDwelling         Int?
+  C38_totRoom                 Int?
+  C39_floormatType            Int?
+  C39_specify                 String? @db.NVarChar(50)
+  C39A_roofmatType            Int?
+  C39A_specify                String? @db.NVarChar(50)
+  C39B_wallmatType            Int?
+  C39B_specify                String? @db.NVarChar(50)
+  C40_waterSource             Int?
+  C40_specify                 String? @db.NVarChar(50)
+  C40A_drinkingwaterFrom      Int?
+  C40B_numMinutes             Int?
+  C40C_maleFemale             Int?
+  C40D_insuffWater            Int?
+  C41_otherPurpose            Int?
+  C41_specify                 String? @db.NVarChar(50)
+  C42_toilfacilType           Int?
+  C42_specify                 String? @db.NVarChar(50)
+  C42A_pitSeptic              Int?
+  C42B_removedBy              Int?
+  C42B_specify                String? @db.NVarChar(50)
+  C42C_toiletLocat            Int?
+  C42D_sharedFacility         Int?
+  C43_garbageDispose          Int?
+  C43_specify                 String? @db.NVarChar(50)
+  C44_fuel_type               Int?
+  C44_specify                 String? @db.NVarChar(50)
+  C44A_usual_place_of_cooking Int?
+  C44A_specify                String? @db.NVarChar(50)
+  C44B_kitchen                Int?    @db.TinyInt
+  C45_lighting_source         Int?
+  C45_specify                 String? @db.NVarChar(50)
+  C46_carTruckvan             Int?
+  C46_motorBike               Int?
+  C46_bicyle                  Int?
+  C46_scooter                 Int?
+  C46_canoe                   Int?
+  C46_boat                    Int?
+  C46_animalDrawncart         Int?
+  C46_refrigerator            Int?
+  C46_stove                   Int?
+  C46_washingMachine          Int?
+  C46_sewingMachine           Int?
+  C46_generator               Int?
+  C46_solarKit                Int?
+  C46_television              Int?
+  C46_mobilePhone             Int?
+  C46_landlinePhone           Int?
+  C46_computer                Int?
+  C46_radio                   Int?
+  C46_internetAccess          Int?
+  C47_waterForhandwash        Int?
+  C47A_availWater             Int?    @db.TinyInt
+  C47B_availSoapdetergent     Int?    @db.TinyInt
+  inter_firstVisit_date       String? @db.NVarChar(Max)
+  firstVisit_resultCode       Int
+  firstVisit_otherSpecify     String? @db.NVarChar(Max)
+  inter_secondVisit_date      String? @db.NVarChar(Max)
+  secondVisit_resultCode      String? @db.NVarChar(Max)
+  secondVisit_otherSpecify    String? @db.NVarChar(Max)
+  inter_thirdVisit_date       String? @db.NVarChar(50)
+  thirdVisit_resultCode       String? @db.NVarChar(50)
+  thirdVisit_otherSpecify     String? @db.NVarChar(50)
+  sssys_irnd                  Float
+  has__errors                 Int     @db.TinyInt
+  interview__status           Int     @db.TinyInt
+  assignment__id              Int     @db.SmallInt
+}
